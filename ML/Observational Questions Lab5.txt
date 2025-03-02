@@ -1,0 +1,18 @@
+Observational Questions:
+
+Q1. Identify any two limitations of KNN for this dataset.
+
+[Ans 1]  i. High Sensitivity to Irrelevant Features: KNN treats all features equally, but some features in the dataset (e.g., Diabetes Pedigree Function, Skin Thickness) may have lower importance compared to others (e.g., Glucose Level, BMI).
+Without proper feature selection or dimensionality reduction, KNN may perform poorly due to noise in less relevant features.
+
+ii. Computational Inefficiency on Large Datasets: KNN does not learn a model; it stores the entire dataset and performs calculations during prediction.
+As the dataset grows, distance calculations become computationally expensive, making KNN slow for large datasets.
+
+
+Q2. What happens when K is too small or too large?
+
+[Ans 2] When K is too small (e.g., K=1 or 2): The model becomes too sensitive to noise and outliers, leading to overfitting.
+The decision boundary is highly flexible, causing the model to capture random fluctuations in the training data.
+
+When K is too large (e.g., K > 50): The model smoothens the decision boundary, making it less sensitive to individual data points.
+This may lead to underfitting, as the classifier relies too much on the majority class, potentially reducing predictive accuracy.

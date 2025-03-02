@@ -1,0 +1,9 @@
+Q1. Which splitting criterion (Gini Index or Entropy) performed better for this dataset, and why might that be the case?
+[Ans 1] Gini Index is often preferred because it is computationally faster, as it does not involve logarithmic calculations. Entropy might sometimes provide better splits in highly imbalanced datasets but could lead to deeper trees. Because, the dataset's structure (e.g., class distribution, feature importance) affects how well each criterion performs.
+The optimal choice depends on whether a simpler tree (Gini) or more information-theoretic splits (Entropy) lead to better generalization.
+
+Q2. Is there any noticeable trend between "BMI" and diabetes presence in the dataset?
+[Ans 2] Yes, there is a noticeable trend higher BMI values are associated with a greater likelihood of diabetes.
+BMI is an important variable in predicting diabetes. The dataset shows that individuals with higher BMI values tend to have a higher risk of developing diabetes. Being overweight or obese significantly increases the risk of developing diabetes. Maintaining a healthy weight is an important factor in prevention. 
+However, BMI alone is not sufficient for diabetes prediction, and other medical factors should be considered.
+
