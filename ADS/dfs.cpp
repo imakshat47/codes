@@ -11,7 +11,6 @@ class Graph{
 	
 	void DFS_util(int s, vector<bool>& visited){			
 		visited[s]=true;		
-		//t++;
 		path.push_back(s);
 		for(int i: adj[s]){			
 			++t;
@@ -24,7 +23,6 @@ class Graph{
 	Graph(int v){
 		V=v;
 		adj.resize(v);
-		//path.resize(v);
 	}
 	
 	void addEdge(int v, int u){
@@ -55,7 +53,7 @@ int main(){
 	cout<<"No of Edges: ";
 	
 	int e;cin>>e;
-	cout<<"Ënter "<<e<<" edges: "<<endl;
+	cout<<"Enter "<<e<<" edges: "<<endl;
 	for(int i=0;i<e;++i){
 		int v,u;cin>>v>>u;
 
