@@ -63,7 +63,7 @@ int main(){
 	cout<<"No of Edges: ";
 	
 	int e;cin>>e;
-	cout<<"Ënter "<<e<<" edges: "<<endl;
+	cout<<"Enter "<<e<<" edges: "<<endl;
 	for(int i=0;i<e;++i){
 		int v,u;cin>>v>>u;
 
