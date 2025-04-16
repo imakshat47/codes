@@ -142,3 +142,28 @@ public:
         }
     }
 };
+
+int main() {
+    SkipList list;
+    int n,x;cin>>n;
+    for(int i=0;i<n;++i){
+        cin>>x;
+        list.insert(x);
+    }
+    // list.insert(3);
+    // list.insert(6);
+    // list.insert(7);
+    // list.insert(9);
+    // list.insert(12);
+    // list.insert(19);
+
+    list.display();
+
+    std::cout << "\nSearch 9: " << (list.search(9) ? "Found" : "Not Found") << "\n";
+    std::cout << "Search 4: " << (list.search(4) ? "Found" : "Not Found") << "\n";
+
+    list.remove(6);
+    list.display();
+
+    return 0;
+}
