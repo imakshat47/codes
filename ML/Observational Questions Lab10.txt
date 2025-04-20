@@ -1,0 +1,2 @@
+Q. What were the limitations of FFNNs with high-dimensional image inputs?
+[Ans] While FFNNs are fundamental in neural network architectures, their application to high-dimensional image data is limited by computational inefficiency, inability to capture spatial hierarchies, and a high risk of overfitting. For tasks like binary image classification of cats and dogs, CNNs offer a more robust and efficient solution.
