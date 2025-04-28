@@ -1,0 +1,14 @@
+---
+triple:          'arm64-apple-darwin'
+binary-path:     '/Users/kaif/Desktop/Mtech/SEM-2/Advanced DSA/LAB_Exp/LAB_1'
+relocations:
+  - { offset: 0x510E, size: 0x8, addend: 0x0, symName: __ZStL8__ioinit, symObjAddr: 0x16FA3, symBinAddr: 0x10000C038, symSize: 0x0 }
+  - { offset: 0x5276, size: 0x8, addend: 0x0, symName: __GLOBAL__sub_I_LAB_1.cpp, symObjAddr: 0x9AC, symBinAddr: 0x100007ABC, symSize: 0x14 }
+  - { offset: 0x528D, size: 0x8, addend: 0x0, symName: __Z41__static_initialization_and_destruction_0v, symObjAddr: 0x970, symBinAddr: 0x100007A80, symSize: 0x3C }
+  - { offset: 0x52AB, size: 0x8, addend: 0x0, symName: __Z6updatePiiii, symObjAddr: 0x600, symBinAddr: 0x1000079FC, symSize: 0x84 }
+  - { offset: 0x530C, size: 0x8, addend: 0x0, symName: __Z8traversePii, symObjAddr: 0x560, symBinAddr: 0x10000795C, symSize: 0xA0 }
+  - { offset: 0x536E, size: 0x8, addend: 0x0, symName: __Z6searchPiii, symObjAddr: 0x4F8, symBinAddr: 0x1000078F4, symSize: 0x68 }
+  - { offset: 0x53DB, size: 0x8, addend: 0x0, symName: __Z6removePiRii, symObjAddr: 0x41C, symBinAddr: 0x100007818, symSize: 0xDC }
+  - { offset: 0x5448, size: 0x8, addend: 0x0, symName: __Z6insertPiRiii, symObjAddr: 0x2FC, symBinAddr: 0x1000076F8, symSize: 0x120 }
+  - { offset: 0x54C4, size: 0x8, addend: 0x0, symName: _main, symObjAddr: 0x0, symBinAddr: 0x1000073FC, symSize: 0x2FC }
+...

@@ -1,0 +1,18 @@
+---
+triple:          'arm64-apple-darwin'
+binary-path:     '/Users/kaif/Desktop/Mtech/SEM-2/Advanced DSA/LAB_Exp/LAB_2'
+relocations:
+  - { offset: 0x510E, size: 0x8, addend: 0x0, symName: __ZStL8__ioinit, symObjAddr: 0x1712B, symBinAddr: 0x10000C040, symSize: 0x0 }
+  - { offset: 0x52FB, size: 0x8, addend: 0x0, symName: __GLOBAL__sub_I_LAB_2.cpp, symObjAddr: 0x75C, symBinAddr: 0x100007C88, symSize: 0x14 }
+  - { offset: 0x5312, size: 0x8, addend: 0x0, symName: __Z41__static_initialization_and_destruction_0v, symObjAddr: 0x720, symBinAddr: 0x100007C4C, symSize: 0x3C }
+  - { offset: 0x5330, size: 0x8, addend: 0x0, symName: _main, symObjAddr: 0x620, symBinAddr: 0x100007B6C, symSize: 0xE0 }
+  - { offset: 0x537C, size: 0x8, addend: 0x0, symName: __Z11traverseCLLP5CNode, symObjAddr: 0x568, symBinAddr: 0x100007AB4, symSize: 0xB8 }
+  - { offset: 0x53B9, size: 0x8, addend: 0x0, symName: __Z9deleteCLLRP5CNodei, symObjAddr: 0x45C, symBinAddr: 0x1000079A8, symSize: 0x10C }
+  - { offset: 0x541A, size: 0x8, addend: 0x0, symName: __Z9insertCLLRP5CNodei, symObjAddr: 0x3CC, symBinAddr: 0x100007918, symSize: 0x90 }
+  - { offset: 0x5466, size: 0x8, addend: 0x0, symName: __Z11traverseDLLP5DNode, symObjAddr: 0x344, symBinAddr: 0x100007890, symSize: 0x88 }
+  - { offset: 0x5494, size: 0x8, addend: 0x0, symName: __Z9deleteDLLRP5DNodei, symObjAddr: 0x26C, symBinAddr: 0x1000077B8, symSize: 0xD8 }
+  - { offset: 0x54E6, size: 0x8, addend: 0x0, symName: __Z9insertDLLRP5DNodei, symObjAddr: 0x1D0, symBinAddr: 0x10000771C, symSize: 0x9C }
+  - { offset: 0x5553, size: 0x8, addend: 0x0, symName: __Z11traverseSLLP5SNode, symObjAddr: 0x148, symBinAddr: 0x100007694, symSize: 0x88 }
+  - { offset: 0x5581, size: 0x8, addend: 0x0, symName: __Z9deleteSLLRP5SNodei, symObjAddr: 0x8C, symBinAddr: 0x1000075D8, symSize: 0xBC }
+  - { offset: 0x55E2, size: 0x8, addend: 0x0, symName: __Z9insertSLLRP5SNodei, symObjAddr: 0x0, symBinAddr: 0x10000754C, symSize: 0x8C }
+...
