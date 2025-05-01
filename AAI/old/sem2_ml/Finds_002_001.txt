@@ -1,0 +1,49 @@
+Aditi, 242211001 - M.Tech. CSA Year 1
+Machine learning lab, dated 22nd Jan' 25
+Timed: 11.35 AM
+
+Assignment 2
+
+
+1. Understanding the Data:
+
+After inspecting the columns, I found out that all the columns were of numeric data types and did not need any conversion for further processing. There are 9 features out of which the  target column is named Outcome and holds values in a binary format of 0/1 for Yes/No for prediction of diabetes.
+
+
+2. Data Cleaning:
+
+Handle Missing Values:  No missing values were found.
+
+Handle Duplicates: No duplicate entries regarding one entire record were found (i.e. no duplicate rows).
+
+Identify Outliers: Insulin feature had the most number of outliers followed by blood pressure and BMI. Because, it is a medical dataset, outliers as such cannot be ignored and removed.
+
+Data Type Validation: Data types were accurately assigned to each feature and the data doesn't need much scaling due to values being mainly smaller numbers. We can still scale using either StandardScaler or MinMaxScaler.
+
+
+3. Descriptive Statistics:
+
+Mean, median, mode, standard deviation, minimum, and maximum for numeric columns.
+Sample column taken: Pregnancies
+Mean: 3.845
+Median: 3.0
+Mode: 0,1
+Standard deviation: 3.369
+Max: 17
+Min: 0
+
+
+4. Data Visualization:
+
+These plots can be created and adjusted using matplotlib and seaborn library.
+
+
+5. Insights and Observations:
+
+● Do higher glucose levels seem to correlate with diabetes?
+Correlation between glucose levels and outcome comes out as 0.466581. This implies that the features are correlated but not extremely.
+
+The least correlation between outcome and any other feature comes out as 0.065 with blood pressure and then 0.074 with skin thickness implies that these features are very weakly correlated with the outcome.
+
+While insulin by itself is not heavily correlated with the outcome, it can be positively associated with glucose levels which affect the diabetes factor in a person.
+
