@@ -1,0 +1,220 @@
+🧠 Graph Algorithms
+1. Breadth-First Search (BFS)
+Easy:
+
+yaml
+Copy
+Edit
+Graph: 0 → 1 → 2
+Start: 0
+Expected Output: 0 1 2
+Medium:
+
+yaml
+Copy
+Edit
+Graph: 0 → 1, 0 → 2, 1 → 3, 2 → 3, 3 → 4
+Start: 0
+Expected Output: 0 1 2 3 4
+Hard:
+
+yaml
+Copy
+Edit
+Graph: Directed, 0→1, 0→2, 1→4, 2→5, 5→6, 4→6, 6→7
+Start: 0
+Expected Output: 0 1 2 4 5 6 7
+2. Depth-First Search (DFS)
+Easy:
+
+makefile
+Copy
+Edit
+Graph: 0 → 1 → 2
+Start: 0
+Expected Output (one possible): 0 1 2
+Medium:
+
+sql
+Copy
+Edit
+Graph: 0→1, 0→2, 1→3, 2→4
+Start: 0
+Expected Output (one DFS order): 0 1 3 2 4
+Hard:
+
+yaml
+Copy
+Edit
+Graph: 0→1, 0→2, 1→4, 2→5, 4→6, 5→6, 6→7
+Start: 0
+Expected Output: 0 1 4 6 7 2 5
+3. Dijkstra's Algorithm
+Easy:
+
+rust
+Copy
+Edit
+Graph: 0→1 (1), 0→2 (4), 1→2 (2)
+Start: 0
+Expected Output: 0->0, 1->1, 2->3
+Medium:
+
+rust
+Copy
+Edit
+Graph: 0→1 (4), 0→2 (1), 2→1 (2), 1→3 (1), 2→3 (5)
+Start: 0
+Expected Output: 0->0, 1->3, 2->1, 3->4
+Hard:
+
+vbnet
+Copy
+Edit
+Graph: 6 nodes, weighted DAG with multiple paths
+Start: 0
+Expected Output: shortest distances to all nodes
+4. Topological Sort
+Easy:
+
+makefile
+Copy
+Edit
+Graph: 0→1, 1→2
+Output: 0 1 2
+Medium:
+
+makefile
+Copy
+Edit
+Graph: 5→0, 5→2, 4→0, 4→1, 2→3, 3→1
+Output (one): 5 4 2 3 1 0
+Hard:
+
+makefile
+Copy
+Edit
+Graph: Multiple dependencies, 10+ nodes, acyclic
+Output: Valid topological sort
+5. Floyd-Warshall Algorithm
+Easy:
+
+makefile
+Copy
+Edit
+Graph: 3 nodes, 0→1 (1), 1→2 (1)
+Output: Shortest distance matrix
+Medium:
+
+sql
+Copy
+Edit
+Graph: 4 nodes, full connectivity with varying weights
+Output: All-pairs shortest paths
+Hard:
+
+makefile
+Copy
+Edit
+Graph: 6 nodes, negative edge weights (no negative cycle)
+Output: Distance matrix including updated shortest paths
+6. Bellman-Ford Algorithm
+Easy:
+
+makefile
+Copy
+Edit
+Graph: 0→1 (5), 1→2 (3)
+Start: 0
+Output: 0->0, 1->5, 2->8
+Medium:
+
+makefile
+Copy
+Edit
+Graph: 0→1 (4), 0→2 (5), 1→2 (-2)
+Start: 0
+Output: 0->0, 1->4, 2->2
+Hard:
+
+sql
+Copy
+Edit
+Graph: Contains a negative weight cycle
+Detect and report the cycle
+📚 Data Structures
+1. Skip Lists
+Easy:
+
+Insert [1, 2, 3], search for 2
+
+Output: Found
+
+Medium:
+
+Insert [5, 10, 7, 3], delete 10, search 10
+
+Output: Not found
+
+Hard:
+
+Random insertions up to 1000 elements
+
+Validate skip pointers, search time remains log(n)
+
+2. Splay Trees
+Easy:
+
+Insert [10, 20, 30], search 20
+
+Output: 20 splayed to root
+
+Medium:
+
+Insert [1 to 10], delete 5, splay 6
+
+Output: 6 at root
+
+Hard:
+
+Perform random inserts/deletes
+
+Validate amortized time remains O(log n)
+
+3. Dynamic Arrays
+Easy:
+
+Add 3 elements to a size-2 array
+
+Output: Resize triggered
+
+Medium:
+
+Add/remove elements repeatedly
+
+Output: Observe growth/shrink factor
+
+Hard:
+
+10^6 additions, measure time
+
+Output: Validate amortized O(1) insertions
+
+4. Hashing Techniques
+Easy:
+
+Insert 10, 20, 30 in a hash table with mod 10
+
+Output: Simple collisions resolved
+
+Medium:
+
+Use quadratic probing for collision resolution
+
+Output: Insertion and lookup succeed
+
+Hard:
+
+Handle 10^5 elements, avoid collisions
+
+Output: Validate constant-time performance
