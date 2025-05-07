@@ -1,5 +1,3 @@
-/// Pavel Kirienko <pavel@uavcan.org>
-/// Distributed under the terms of the MIT license.
 /// g++ -std=c++17 -O2 -Wall tx.cpp -lpthread -o tx && ./tx
 
 #include "side_channel_params.hpp"
