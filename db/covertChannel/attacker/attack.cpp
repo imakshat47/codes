@@ -137,76 +137,21 @@ public:
         }
         return { data, clock };
     }
+    // Compute lock status without modifying channel state
     bool isCodePhaseLocked(float thr = 5.0F) const {
-        auto vec = [&]{ std::vector<float> v; v.reserve(channels_.size());
-            for (auto& ch : channels_) v.push_back(ch.feed(readPHY()).correlation);
-            return v; }();
+        auto vec = getCorrVec();
         auto [m, s] = computeMeanStdev(vec);
-        return (*std::max_element(vec.begin(), vec.end()) - m) > thr * s;
+        float mx = *std::max_element(vec.begin(), vec.end());
+        return (mx - m) > thr * s;
     }
-};
-
-// Reads bits
-class BitReader {
-    Correlator corr_;
-    bool latch_ = false;
-public:
-    bool next() {
-        while (true) {
-            bool phy = readPHY();
-            auto r = corr_.feed(phy);
-            if (!latch_ && r.clock > 0) { latch_ = true; return r.data > 0; }
-            if (latch_ && r.clock < 0) latch_ = false;
+    // Retrieve per-channel correlation metrics
+    std::vector<float> getCorrVec() const {
+        std::vector<float> v;
+        v.reserve(channels_.size());
+        for (const auto& ch : channels_) {
+            v.push_back(ch.getCorrelation());
         }
-    }
-};
-
-// Reads symbols
-class SymbolReader {
-    BitReader br_;
-    uint64_t zeros_ = 0;
-    int8_t rem_ = -1;
-    uint8_t buf_ = 0;
-public:
-    struct Delimiter {};
-    using Symbol = std::variant<Delimiter, uint8_t>;
-    Symbol next() {
-        while (true) {
-            bool bit = br_.next();
-            if (rem_ >= 0) {
-                buf_ = (buf_ << 1) | bit; if (--rem_ < 0) return buf_;
-            } else if (bit) { zeros_ = 0; rem_ = 7; buf_ = 0; }
-            else if (++zeros_ > 8) return Delimiter{};
-        }
-    }
-};
-
-// Packet assembler
-class PacketReader {
-    SymbolReader sr_;
-    struct Assembler {
-        std::vector<uint8_t> buf;
-        std::optional<std::vector<uint8_t>> operator()(SymbolReader::Delimiter) {
-            if (buf.size() >= 2) {
-                uint16_t crc = side_channel::params::CRCInitial;
-                for (auto b : buf) crc = side_channel::crcAdd(crc, b);
-                if (crc == 0) {
-                    buf.pop_back(); buf.pop_back();
-                    return buf;
-                }
-            }
-            buf.clear(); return {};
-        }
-        std::optional<std::vector<uint8_t>> operator()(uint8_t d) {
-            buf.push_back(d); return {};
-        }
-    } asm_;
-public:
-    std::vector<uint8_t> next() {
-        while (true) {
-            auto sym = sr_.next();
-            if (auto opt = std::visit(asm_, sym)) return *opt;
-        }
+        return v;
     }
 };
 
