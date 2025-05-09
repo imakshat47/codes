@@ -12,10 +12,12 @@
 #include <optional>
 #include <cstdint>
 
-// Stub for side_channel_params.hpp
+// Code for side_channel_params.hpp
 #include <bitset>
 #include <chrono>
 #include <cstddef>
+#define MAX_CONCURRENCY 2
+
 namespace side_channel {
   namespace params {
     using ChipPeriod = std::chrono::nanoseconds;
@@ -23,14 +25,13 @@ namespace side_channel {
     static constexpr std::bitset<CDMACodeLength> CDMACode{ /* ... */ };
     static constexpr uint16_t CRCInitial = 0xFFFF;
   }
-  // stub for crcAdd
+  // For crcAdd
   inline uint16_t crcAdd(uint16_t crc, uint8_t v) {
     // placeholder implementation
     return crc;
   }
 }
-  }
-}
+
 
 static constexpr auto OversamplingFactor = 3;
 static constexpr auto SampleDuration = side_channel::params::ChipPeriod{} / OversamplingFactor;
