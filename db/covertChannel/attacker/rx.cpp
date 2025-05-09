@@ -121,16 +121,19 @@ public:
         float clock = 0.0f;
     };
 
-    Correlator() {
-        using side_channel::params::CDMACode;
-        if (spread_code_seq_.empty()) {
-            spread_code_seq_.reserve(CDMACode.size() * OversamplingFactor);
-            for (auto code_bit : CDMACode) {
-                for (auto j = 0U; j < OversamplingFactor; j++) {
-                    spread_code_seq_.push_back(static_cast<char>(code_bit));
-                }
+   // In Correlator class constructor:
+Correlator() {
+    using side_channel::params::CDMACode;
+    if (spread_code_seq_.empty()) {
+        spread_code_seq_.reserve(CDMACode.size() * OversamplingFactor);
+        // Iterate through bitset using index-based access
+        for (size_t i = 0; i < CDMACode.size(); ++i) {
+            const bool code_bit = CDMACode[i];  // Access bitset by index
+            for (auto j = 0U; j < OversamplingFactor; j++) {
+                spread_code_seq_.push_back(static_cast<char>(code_bit));
             }
         }
+    }
         channels_.reserve(SequenceLength);
         for (uint32_t i = 0; i < SequenceLength; ++i) {
             channels_.emplace_back(spread_code_seq_, i);
